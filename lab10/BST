@@ -1,0 +1,22 @@
+typedef struct tree {
+  int val;
+  struct tree* parent;
+  struct tree* left;
+  struct tree* right;
+} Tree;
+
+Tree* createNode(int val) {
+  Tree* node = new Tree;
+  node->parent = NULL;
+  node->left = NULL;
+  node->right = NULL;
+  return node;
+}
+
+void addEdge(Tree* parent, Tree* child, string side) {
+  if (side == "L") {
+    parent->left = child;
+  } else {
+    parent->right = child;
+  }
+}
